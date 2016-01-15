@@ -1,0 +1,55 @@
+/* Authored by Joseph De Araujo */
+
+
+.menuLink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #616161;
+	text-decoration: none;
+}
+
+a.menuLink:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-family: Tahoma;
+	font-size: 18px;
+	font-weight: bold;
+	color: #E6851C;
+}
+
+body, td, p, select, input, textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #545454;
+}
+
+a {
+	color: #E6851C;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #E6851C;
+	text-decoration: underline;
+}
+
+.sidenewshdr{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color: #FFFFFF;
+}
+
+.navbar{
+background-image:url(images/navbg_dn.gif);
+}
+
+.searchlink, .searchlink:hover {
+color: #FFFFFF;
+text-decoration:none;
+}
+

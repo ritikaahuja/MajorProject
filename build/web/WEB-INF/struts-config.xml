@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="AdminLoginForm" type="com.yourcompany.struts.form.AdminLoginForm" />
+    <form-bean name="NewRegistrationForm" type="com.yourcompany.struts.form.NewRegistrationForm" />
+    <form-bean name="UserLoginForm" type="com.yourcompany.struts.form.UserLoginForm" />
+    <form-bean name="CustomerTransactionForm" type="com.yourcompany.struts.form.CustomerTransactionForm" />
+    <form-bean name="UserDetailsForm" type="com.yourcompany.struts.form.UserDetailsForm" />
+    <form-bean name="CreditCardForm" type="com.yourcompany.struts.form.CreditCardForm" />
+    <form-bean name="BillprocessForm" type="com.yourcompany.struts.form.BillprocessForm" />
+    <form-bean name="ModifycustomerdetailsForm" type="com.yourcompany.struts.form.ModifycustomerdetailsForm" />
+    <form-bean name="AmountcreditForm" type="com.yourcompany.struts.form.AmountcreditForm" />
+
+
+  </form-beans>
+    <global-exceptions >
+        <exception key="error.system" type="java.lang.Exception"
+          handler="com.yourcompany.struts.action.AdminLoginAction" path="/index.jsp" />
+
+
+    </global-exceptions >
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="AdminLoginForm"
+      input="/AdminLogin.jsp"
+      name="AdminLoginForm"
+      path="/AdminLogin"
+      scope="request"
+      type="com.yourcompany.struts.action.AdminLoginAction">
+      <forward name="failure" path="/AdminLogin.jsp?error=INVALID ACCOUNT NUMBER AND PASSWORD" />
+
+      <forward name="sucess" path="/AdminHome.jsp" />
+    </action>
+    <action
+      attribute="NewRegistrationForm"
+      input="/NewRegistration.jsp"
+      name="NewRegistrationForm"
+      path="/NewRegistration"
+      scope="request"
+      type="com.yourcompany.struts.action.NewRegistrationAction">
+      <forward name="failure" path="/NewRegistration.jsp?error=INVALID TEXT" />
+      <forward name="exist" path="/NewRegistration.jsp?err=ACCOUNT NUMBER " />
+      <forward name="sucess" path="/AdminHome.jsp" />
+    </action>
+    <action
+      attribute="UserLoginForm"
+      input="/UserLogin.jsp"
+      name="UserLoginForm"
+      path="/UserLogin"
+      scope="request"
+      type="com.yourcompany.struts.action.UserLoginAction">
+      <forward name="failure" path="/UserLogin.jsp?error=INVALID ACCOUNT NUMBER AND PASSWORD" />
+      <forward name="sucess" path="/CustomerHome.jsp" />
+    </action>
+    <action
+      attribute="CustomerTransactionForm"
+      input="/CustomerTransaction.jsp"
+      name="CustomerTransactionForm"
+      path="/CustomerTransaction"
+      scope="request"
+      type="com.yourcompany.struts.action.CustomerTransactionAction">
+      <forward name="failure" path="/CustomerTransaction.jsp?error=Check the Amount" />
+      <forward name="sucess" path="/TransactionSucess.jsp" />
+    </action>
+    <action
+      attribute="UserDetailsForm"
+      input="/UserDetails.jsp"
+      name="UserDetailsForm"
+      path="/UserDetails"
+      scope="request"
+      type="com.yourcompany.struts.action.UserDetailsAction">
+      <forward name="failure" path="/UserDetails.jsp?err=invalid" />
+      <forward name="sucess" path="/PasswordChangedSucess.jsp" />
+    </action>
+    <action
+      attribute="CreditCardForm"
+      input="/CreditCard.jsp"
+      name="CreditCardForm"
+      path="/CreditCard"
+      scope="request"
+      type="com.yourcompany.struts.action.CreditCardAction">
+      <forward name="failure" path="/CreditCard.jsp?error=INVALID ACCOUNT NUMBER AND PASSWORD" />
+      <forward name="sucess" path="/Creditprocess.jsp" />
+    </action>
+    <action
+      attribute="BillprocessForm"
+      input="/Billprocess.jsp"
+      name="BillprocessForm"
+      path="/Billprocess"
+      scope="request"
+      type="com.yourcompany.struts.action.BillprocessAction">
+      <forward name="failure" path="/Billprocess.jsp?error=Check Your AmountSend" />
+      <forward name="sucess" path="/Billprocess.jsp?error=Amount Send Sucessfully" />
+    </action>
+    <action
+      attribute="ModifycustomerdetailsForm"
+      input="/Modifycustomerdetails.jsp"
+      name="ModifycustomerdetailsForm"
+      path="/Modifycustomerdetails"
+      scope="request"
+      type="com.yourcompany.struts.action.ModifycustomerdetailsAction">
+      <forward name="failure" path="/Modifycustomerdetails.jsp?error=Check the data" />
+      <forward name="sucess" path="/CustomerDetails.jsp" />
+    </action>
+    <action
+      attribute="AmountcreditForm"
+      input="/Amountcredit.jsp"
+      name="AmountcreditForm"
+      path="/Amountcredit"
+      scope="request"
+      type="com.yourcompany.struts.action.AmountcreditAction">
+      <forward name="failure" path="/Amountcredit.jsp" />
+      <forward name="sucess" path="/Amountcredit.jsp?error=Credit sucessfully" />
+    </action>
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+
